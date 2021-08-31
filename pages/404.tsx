@@ -1,11 +1,11 @@
 import { useEffect } from 'react'
-import { useRouter} from 'next/router'
+import { useRouter } from 'next/router'
 
 export default function Sustom404() {
-    const router = useRouter();
+  const router = useRouter();
   useEffect(() => {
     setTimeout(() => {
-        router.push('/')
+      router.push('/')
     }, 2000)
   }, [])
   return (

@@ -1,3 +1,4 @@
+/* eslint-disable import/extensions */
 /* eslint-disable max-len */
 import type { NextPage } from 'next'
 import Image from 'next/image'

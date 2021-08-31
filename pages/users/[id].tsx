@@ -1,4 +1,4 @@
-import { GetStaticProps } from 'next';
+/* eslint-disable import/extensions */
 import Layout from '../../components/Layout';
 
 interface User {
@@ -28,7 +28,7 @@ export default function UserDetail(props: UserDetailProps) {
 // GET STATIC PATH FOR DETAIL
 export async function getStaticPaths() {
   const res = await fetch('https://jsonplaceholder.typicode.com/users');
-  const dataUsers= await res.json();
+  const dataUsers = await res.json();
   const paths = dataUsers.map((data:User) => {
     return {
       params: {
@@ -42,19 +42,18 @@ export async function getStaticPaths() {
   };
 }
 
-
-interface getStaticProps {
+interface getStaticProp {
   params: {
     id: string;
   }
 }
 
-export async function getStaticProps(context: getStaticProps) {
+export async function getStaticProps(context: getStaticProp) {
   const { id } = context.params;
-  const res = await fetch('https://jsonplaceholder.typicode.com/users/' + id);
+  const res = await fetch(`https://jsonplaceholder.typicode.com/users/${id}`);
   const user = await res.json();
 
-  return{
+  return {
     props: {
       user,
     },

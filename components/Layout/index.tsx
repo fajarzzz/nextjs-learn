@@ -1,7 +1,8 @@
+/* eslint-disable import/extensions */
 import { ReactNode } from 'react';
+import Head from 'next/head'
 import Footer from '../Footer';
 import Header from '../Header';
-import Head from 'next/head'
 import styles from './Layout.module.css'
 
 interface LayoutProps {
@@ -14,7 +15,11 @@ export default function Layout(props: LayoutProps) {
   return (
     <>
       <Head>
-        <title>NextJS | {' '}{pageTitle}</title>
+        <title>
+          NextJS |
+          {' '}
+          {pageTitle}
+        </title>
         <meta name="description" content="Website NextJS" />
       </Head>
       <div className={styles.container}>
